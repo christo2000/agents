@@ -1,4 +1,4 @@
-from core.object_detection_tool import ObjectDetection
+from core.tools.object_detection_tool import ObjectDetection
 
 def main():
     model_dir = r"D:\Workspace\python\model\PP-DocLayout-L_infer"
