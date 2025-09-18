@@ -1,8 +1,20 @@
-output/
+# Output and temp files
+backend/output/
+temp/
 
-# Ignore virtual environment
+# Python virtual environments
 venv/
 .venv/
+env/
 
-# Ignore log files
+# Logs
 *.log
+
+# OS-specific junk
+.DS_Store
+Thumbs.db
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
