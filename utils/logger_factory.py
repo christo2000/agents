@@ -69,7 +69,3 @@ class LoggerHandling:
 
     def debug(self, log_message: str) -> None:
         logger.debug(f" message: {log_message}")
-
-if __name__=="__main__":
-    logger_fac = LoggerHandling()
-    logger_fac.info("success")
