@@ -9,7 +9,7 @@ class ObjectDetection:
     def __init__(self, model_name, model_dir):
         self.model = LayoutDetection(
         model_name="PP-DocLayout-L",
-        model_dir=r"D:\Workspace\python\model\PP-DocLayout-L_infer"
+        model_dir=model_dir
     )
 
     def process(self, input_path: str, output_folder: str, batch_size: int = 4):

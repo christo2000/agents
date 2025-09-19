@@ -1,0 +1,11 @@
+SYS_FORMAT= "<green>{time:YYYY-MM-DD HH:mm:ss}</green> | <level>{level: <8}</level> | <cyan>{message}</cyan>"
+SYS_DEBUG_LEVEL="INFO"
+SYS_COLOR=True
+FILE_MAX_SIZE="1 KB"
+RETENTION="7 days"
+FILE_COMPRESS_FORMAT="zip"  # Compress old logs
+FILE_FORMAT = "{time:YYYY-MM-DD HH:mm:ss} | {level} | {module} | {message}"
+FILE_LEVEL_DEBUG = "TRACE"
+FILE_COLORIZE = True
+LOG_DIR = "logs"
+USE_AZURE = False
