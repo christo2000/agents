@@ -1,18 +1,17 @@
-import os
 from pathlib import Path
-
-import paddle
 from paddleocr import LayoutDetection
+
+from config.model_config import OBJECT_DETECTION, PADDLE_OCR_BATCH
 
 
 class ObjectDetection:
     def __init__(self, model_name, model_dir):
         self.model = LayoutDetection(
-        model_name="PP-DocLayout-L",
+        model_name=OBJECT_DETECTION,
         model_dir=model_dir
     )
 
-    def process(self, input_path: str, output_folder: str, batch_size: int = 4):
+    def process(self, input_path: str, output_folder: str, batch_size: int = PADDLE_OCR_BATCH):
         input_path = Path(input_path)
         output_path = Path(output_folder)
         output_path.mkdir(parents=True, exist_ok=True)
@@ -20,7 +19,7 @@ class ObjectDetection:
         # Case 1: Single image
         if input_path.is_file() and input_path.suffix.lower() in [".png", ".jpg", ".jpeg"]:
             print(f"📄 Processing single image: {input_path.name}")
-            outputs = self.model.predict([str(input_path)], batch_size=1, layout_nms=True)
+            outputs = self.model.predict([str(input_path)], batch_size=batch_size, layout_nms=True)
             self._save_results([input_path], outputs, output_path)
 
         # Case 2: Folder of images

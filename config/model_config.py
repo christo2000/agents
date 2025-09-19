@@ -1,1 +1,3 @@
 MODEL_NAME = "qwen2.5vl:7b"
+OBJECT_DETECTION = "PP-DocLayout-L"
+PADDLE_OCR_BATCH = 4
